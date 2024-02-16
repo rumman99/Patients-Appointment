@@ -1,0 +1,19 @@
+.info-primary{
+    background-color: #1cc7c1;
+}
+
+.info-dark{
+    background-color: #3a4256;
+}
+
+.info-icon{
+    font-size: 3em;
+    margin-right: 10px;
+    line-height: 1;
+}
+
+.info-container{
+    margin-top: -70px;
+    margin-left: 70px;
+    margin-right: 70px
+}
