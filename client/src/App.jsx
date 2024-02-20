@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './components/HomePage/Home/Home'
-import GetAppointmentPage from './components/GetAppointmentPage/GetAppointmentPage'
-import Navbar from './components/Shared/Navbar/Navbar'
+import GetAppointmentPage from './components/AppointmentPage/GetAppointment/GetAppointment'
+
 
 function App() {
 

@@ -26,14 +26,14 @@ const Footer = () => {
     return (
         <div className="bg-color d-flex justify-content-center mt-5">
             {
-                datas.map(data => {
+                datas.map((data, index) => {
                     return (
-                        <>
+                            <div key={index}>
                             <div className="mt-5 mx-5">
                                 <h5 style={{color: '#1cc7c1', marginBottom:'20px'}}>{data.title}</h5>
                                 <small>{data.text.map(text=> <p className="text-secondary fw-semibold">{text}</p>)}</small>
                             </div>
-                        </>
+                            </div>                       
                     )
                 })
             }

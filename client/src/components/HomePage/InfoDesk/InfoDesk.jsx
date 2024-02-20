@@ -2,6 +2,7 @@ import { IoIosTimer } from "react-icons/io";
 import { MdLocationCity } from "react-icons/md";
 import { MdPermPhoneMsg } from "react-icons/md";
 import './infoDesk.css';
+import { v4 as uuidv4 } from 'uuid';
 
 const infoDeskData= [
     {
@@ -28,10 +29,10 @@ const InfoDesk = () => {
 
     return (
         <div className="row text-white">
-            {infoDeskData.map((info, index)=> {
+            {infoDeskData.map((info)=> {
                 return (
                     <>
-                    <div className="col-md-4" key={index}>
+                    <div className="col-md-4">
                         <div className={`info-container d-flex justify-content-center info-${info.backgroundColor} p-4 rounded-4`}>
                         <div className="info-icon">
                             {info.icon}

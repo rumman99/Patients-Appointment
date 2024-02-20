@@ -1,0 +1,9 @@
+.customColor{
+    color: #1cc7c1;
+}
+
+.customButton{
+    background: linear-gradient(135deg, #12D0DE 60%, #16D2BD);
+    color: white;
+    font-weight: 500;
+}
