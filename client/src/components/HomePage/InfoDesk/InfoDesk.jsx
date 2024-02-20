@@ -6,13 +6,13 @@ import './infoDesk.css';
 const infoDeskData= [
     {
     name: 'Opening Time',
-    description: 'We are Open 7 Days from 9am-5pm',
+    description: '7 Days from 9am-5pm',
     icon: <IoIosTimer/>,
     backgroundColor: 'primary'
     },
     {
     name: 'Visit Our Location',
-    description: 'Babar Road, Mohammadpur, Dhaka',
+    description: 'Mohammadpur, Dhaka',
     icon: <MdLocationCity/>,
     backgroundColor: 'dark'
     },
@@ -28,10 +28,10 @@ const InfoDesk = () => {
 
     return (
         <div className="row text-white">
-            {infoDeskData.map(info=> {
+            {infoDeskData.map((info, index)=> {
                 return (
                     <>
-                    <div className="col-md-4">
+                    <div className="col-md-4" key={index}>
                         <div className={`info-container d-flex justify-content-center info-${info.backgroundColor} p-4 rounded-4`}>
                         <div className="info-icon">
                             {info.icon}

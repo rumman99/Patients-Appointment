@@ -1,0 +1,15 @@
+.bg-color{
+    background-image: url('../../../../images/assets/images/footer-bg.png');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+
+.copyright{
+    position: absolute;
+    bottom: -100px;
+}
+
+.invisible-text{
+    visibility: hidden;
+}

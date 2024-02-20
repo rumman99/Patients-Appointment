@@ -1,0 +1,20 @@
+.banner{
+    background-image: url('../../../../images/assets/images/appointment.png');
+    background-size: cover;
+    height: 50vh;
+}
+
+.banner h2, p{
+    color: white;
+}
+
+.banner h5{
+    color: #16D2BD;
+}
+
+.doctor img{
+    width: 60%;
+    position: relative;
+    left: 180px;
+    bottom: 50px;
+}

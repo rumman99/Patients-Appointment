@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import logo from "../../../../images/assets/images/logo.png"
 
 const Navbar = () => {
@@ -12,22 +13,22 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item ms-5">
-                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                    <NavLink to='/'><button className="btn btn-outline-dark" aria-current="page" href="#">Home</button></NavLink>
                     </li>
                     <li className="nav-item ms-5">
-                    <a className="nav-link active" aria-current="page" href="#">About Us</a>
+                    <NavLink href=""><button className="btn btn-outline-dark" aria-current="page" href="#">About Us</button></NavLink>
                     </li>
                     <li className="nav-item ms-5">
-                    <a className="nav-link active" aria-current="page" href="#">Services</a>
+                    <NavLink href=""><button className="btn btn-outline-dark" aria-current="page" href="#">Services</button></NavLink>
                     </li>
                     <li className="nav-item ms-5">
-                    <a className="nav-link active" aria-current="page" href="#">Reviews</a>
+                    <NavLink href=""><button className="btn btn-outline-dark" aria-current="page" href="#">Review</button></NavLink>
                     </li>
                     <li className="nav-item ms-5">
-                    <a className="nav-link active" aria-current="page" href="#">Blogs</a>
+                    <NavLink href=""><button className="btn btn-outline-dark" aria-current="page" href="#">Blogs</button></NavLink>
                     </li>
                     <li className="nav-item ms-5 me-5">
-                    <a className="nav-link active" aria-current="page" href="#">Contact Us</a>
+                    <NavLink href=""><button className="btn btn-outline-dark" aria-current="page" href="#">Contact Us</button></NavLink>
                     </li>
                 </ul>
                 </div>

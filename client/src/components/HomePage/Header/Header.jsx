@@ -1,5 +1,5 @@
 import MainCover from "../MainCover/MainCover";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../../Shared/Navbar/Navbar";
 import './header.css'
 
 const Header = () => {

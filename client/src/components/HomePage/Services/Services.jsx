@@ -27,11 +27,11 @@ const Services = () => {
                 <h4 style={{color:'#1cc7c1'}}>OUR SERVICES</h4>
                 <h2>Services We Provide</h2>
             </div>
-            <div className="row text-center">
-            {servicesData.map(info=> {
+            <div className="d-flex text-center justify-content-center">
+            {servicesData.map((info, index)=> {
                 return (
-                    <>
-                    <div style={{color:"#3a4256"}} className="col-md-4">
+                    <span key={index}>
+                    <div style={{color:"#3a4256"}}>
                         <div className='info-container d-flex justify-content-center p-4 rounded-4'>
                         <div>
                             <img style={{height:'60px', marginBottom:'15px'}} className="img-fluid" src={info.img} alt="" />
@@ -40,7 +40,7 @@ const Services = () => {
                         </div>
                         </div>
                     </div>
-                    </>
+                    </span>
                 )
             })}
         </div>
