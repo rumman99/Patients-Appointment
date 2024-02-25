@@ -8,6 +8,10 @@ import AvailableAppointment from '../AvailableAppointment/AvailableAppointment';
 const GetAppointmentPage = () => {
     const [selectDate, setSelectDate]= useState(new Date())
 
+    // const formatDate = (date) => {
+    //     return date.toLocaleDateString('en-GB');
+    //   };
+
     /// Calendar Date //
     const getCalender= date =>{
         setSelectDate(date);

@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
 import './modalAppointment.css'
+import { useEffect, useState } from 'react';
 
 const customStyles = {
     content: {
@@ -13,21 +14,34 @@ const customStyles = {
     },
   };
 
-const ModalAppointment = ({modalIsOpen, closeModal, subject}) => {
+const ModalAppointment = ({modalIsOpen, closeModal, subject, selectDate}) => {
     // React Form Hook //
     const {
         register,
         formState: { errors },
         handleSubmit,
-      } = useForm()
-      const onSubmit = (data) => {
-        console.log(data);
-        closeModal();
+        } = useForm()
+        const onSubmit = (data) => {
+        data.title = subject.subject;
+        data.date = selectDate;
+
+        fetch('http://localhost:3333/appointment',{
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(result => result.json())
+        .then(finalResult => {
+            if(finalResult){
+                alert("Appointment Create Successfully");
+                closeModal();
+            }
+        })  
     }
 
     // Modal //
     Modal.setAppElement('#root');
-
+    
     return (
         <>
             <div>

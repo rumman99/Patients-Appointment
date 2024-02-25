@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ModalAppointment from "../ModalAppointmet/ModalAppointment";
 
-const AppointmentCard = ({data}) => {
+const AppointmentCard = ({data, selectDate}) => {
     /// Handle Get Appointment Modal /// 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -29,7 +29,7 @@ const AppointmentCard = ({data}) => {
         <button onClick={openModal} className="mt-3 customButton btn">Get Appointment</button>
         </div>
     {/* Modal Component */}
-    <ModalAppointment subject={data} modalIsOpen={modalIsOpen} closeModal={closeModal}/>
+    <ModalAppointment subject={data} modalIsOpen={modalIsOpen} closeModal={closeModal} selectDate={selectDate}/>
         </div>
         </>
     );

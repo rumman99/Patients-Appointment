@@ -2,8 +2,6 @@ import bg from "../../../../images/assets/images/bg.jpg";
 import Calendar from 'react-calendar';
 
 const GetCalendar = ({getCalender}) => {
-    
-    
 
     return (
         <div>

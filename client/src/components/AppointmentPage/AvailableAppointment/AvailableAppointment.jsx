@@ -46,7 +46,7 @@ const AvailableAppointment = ({selectDate}) => {
         <div className='row d-flex justify-content-center'>
             <h2 className="text-center customColor mt-5">Available Appointment on {selectDate.toDateString()}</h2>
             {
-                appointmentData.map((data, index)=><AppointmentCard key={index} data={data}/>)
+                appointmentData.map((data, index)=><AppointmentCard key={index} data={data} selectDate={selectDate}/>)
             }
         </div>
     );
