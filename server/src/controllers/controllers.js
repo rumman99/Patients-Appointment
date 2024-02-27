@@ -1,5 +1,5 @@
 const log = require('../logger/logger');
-const createAppointment = require('../service/appointmentService');
+const {dashboardAppointment, createAppointment} = require('../service/appointmentService');
 
 // Post Appointment //
 const appointment = async(req, res)=>{
@@ -11,6 +11,24 @@ const appointment = async(req, res)=>{
     catch(err){
         log.error(err);
     }
+};
+
+// Get Dashboard Appointment by Date //
+const appointmentByDate= async(req, res)=>{
+    const date= req.body.date;
+
+    try{
+        const dashboardAppoint=await dashboardAppointment({date: date});
+        if(dashboardAppoint){
+            res.status(200).send(dashboardAppoint);
+        }
+        else{
+            log.info("Not Found");
+        }
+    }
+    catch(err){
+        log.error(err);
+    }
 }
 
-module.exports= appointment;
+module.exports= {appointment, appointmentByDate};

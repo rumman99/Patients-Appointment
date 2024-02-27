@@ -1,7 +1,7 @@
 import bg from "../../../../images/assets/images/bg.jpg";
 import Calendar from 'react-calendar';
 
-const GetCalendar = ({getCalender}) => {
+const GetCalendar = ({getCalender, selectDate}) => {
 
     return (
         <div>
@@ -12,7 +12,7 @@ const GetCalendar = ({getCalender}) => {
             <div className="col-md-4 offset-md-1">
                 <h1 className='mb-md-5'>Appointment</h1>
                 <div>
-                <Calendar onChange={getCalender} value={new Date()} />
+                <Calendar onChange={getCalender} value={selectDate} />
                 </div>
             </div>
         </div>

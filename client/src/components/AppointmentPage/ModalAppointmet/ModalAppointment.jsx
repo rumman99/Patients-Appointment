@@ -1,7 +1,6 @@
 import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
 import './modalAppointment.css'
-import { useEffect, useState } from 'react';
 
 const customStyles = {
     content: {
@@ -20,10 +19,12 @@ const ModalAppointment = ({modalIsOpen, closeModal, subject, selectDate}) => {
         register,
         formState: { errors },
         handleSubmit,
+        reset
         } = useForm()
         const onSubmit = (data) => {
         data.title = subject.subject;
         data.date = selectDate;
+        data.time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
         fetch('http://localhost:3333/appointment',{
             method: "POST",
@@ -35,13 +36,14 @@ const ModalAppointment = ({modalIsOpen, closeModal, subject, selectDate}) => {
             if(finalResult){
                 alert("Appointment Create Successfully");
                 closeModal();
+                reset();
             }
         })  
     }
 
     // Modal //
     Modal.setAppElement('#root');
-    
+
     return (
         <>
             <div>
@@ -51,6 +53,7 @@ const ModalAppointment = ({modalIsOpen, closeModal, subject, selectDate}) => {
                 style={customStyles}
                 contentLabel="Example Modal">
                 <div className='fw-bolder fs-4 customColor text-center'>{subject.subject}</div>
+                <h6 className='text-secondary text-center'>Date: {selectDate}</h6>
                 <form className='formDesign' onSubmit={handleSubmit(onSubmit)}>
                 <input type='text' placeholder='Your Name?'
                     {...register("name", { required: true })}

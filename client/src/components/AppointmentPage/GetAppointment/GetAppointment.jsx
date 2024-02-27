@@ -8,20 +8,23 @@ import AvailableAppointment from '../AvailableAppointment/AvailableAppointment';
 const GetAppointmentPage = () => {
     const [selectDate, setSelectDate]= useState(new Date())
 
-    // const formatDate = (date) => {
-    //     return date.toLocaleDateString('en-GB');
-    //   };
+    const formatDate = (date) => {
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    };
 
-    /// Calendar Date //
+    // Calendar Date //
     const getCalender= date =>{
         setSelectDate(date);
     }
-
+    const formattedDate = formatDate(selectDate);
     return (
         <div>
             <Navbar/>
-            <GetCalendar getCalender={getCalender}/>
-            <AvailableAppointment selectDate={selectDate}/>
+            <GetCalendar getCalender={getCalender} selectDate={selectDate}/>
+            <AvailableAppointment selectDate={formattedDate}/>
             <Footer/>
         </div>
     );
