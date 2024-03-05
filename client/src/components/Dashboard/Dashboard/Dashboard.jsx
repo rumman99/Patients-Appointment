@@ -2,6 +2,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import DashboardAppointment from '../DashboardAppointment/DashboardAppointment';
 import DashboardCalendar from '../DashboardCalendar/DashboardCalendar';
 import { useEffect, useState } from 'react';
+import AllAppointments from '../AllAppointments/AllAppointments';
 
 const Dashboard = () => {
     const [selectDate, setSelectDate]= useState(new Date())

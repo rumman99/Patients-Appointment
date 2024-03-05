@@ -6,19 +6,19 @@ const testimonialData= [
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sit praesentium quas aliquid vitae quam illum necessitatibus? Consectetur beatae",
         name: "Ridhan Alam",
         country: 'Bangladesh',
-        img: img
+        img: 'screenshot.png'
     },
     {
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sit praesentium quas aliquid vitae quam illum necessitatibus? Consectetur beatae",
         name: "Ridhan Alam",
         country: 'Bangladesh',
-        img: img
+        img: 'rumman_qr.png'
     },
     {
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sit praesentium quas aliquid vitae quam illum necessitatibus? Consectetur beatae",
         name: "Ridhan Alam",
         country: 'Bangladesh',
-        img: img
+        img: "409100327_384590501096426_3729089065403317569_n.jpg"
     }
 ]
 
@@ -42,7 +42,7 @@ const Testimonial = () => {
                     <div className="card-body">
                         <p className="card-text text-secondary">{data.text}</p>
                         <div className="d-flex justify-content-center mt-5">
-                        <img className="img-fluid w-25 me-3" src={data.img} alt="" />
+                        <img className="img-fluid w-25 me-3" src={`http://localhost:3333/doctor/${data.img}`} alt="" />
                         <div>
                         <h6 style={{color:'#1cc7c1', fontWeight:'700'}} className="card-subtitle mb-2">{data.name}</h6>
                         <p href="#" className="card-text text-black">{data.country}</p>
