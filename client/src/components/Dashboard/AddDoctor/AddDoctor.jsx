@@ -3,7 +3,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import './addDoctor.css';
 
 const AddDoctor = () => {
-    const [doctor, setDoctor]= useState({});
+    const [doctor, setDoctor]= useState({ name: '', email: '' });
     const [file, setFile]= useState('');
 
     const handleBlur=(e)=>{
@@ -18,7 +18,7 @@ const AddDoctor = () => {
     }
 
     const handleSubmit=async(e)=>{
-        e.preventDefault();
+        // e.preventDefault();
         const formData= new FormData();
         formData.append('file', file);
         formData.append('name', doctor.name);
@@ -30,6 +30,11 @@ const AddDoctor = () => {
         })
         const result = await data.json();
         console.log(result);
+        alert("Doctor Added Successfully")
+
+        // Clear input fields after submission
+        setDoctor({ name: '', email: '' });
+        setFile('');
     }
 
     return (

@@ -5,7 +5,7 @@ import './header.css'
 const Header = () => {
     return (
         <div className="triangle">
-        <Navbar/>
+        <Navbar showLogo={true}/>
         <MainCover/>
         </div>
         );

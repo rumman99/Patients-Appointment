@@ -1,5 +1,6 @@
 const log = require('../logger/logger');
 path = require('path')
+const fsExtra = require('fs-extra');
 const {dashboardAppointment, createAppointment} = require('../service/appointmentService');
 const {createDoctor, getDoctorLists} = require('../service/doctorService');
 
@@ -39,19 +40,34 @@ const addDoctor= async(req, res)=>{
         const file= req.files.file;
         const name= req.body.name;
         const email= req.body.email;
+        const filePath= `${__dirname, '..', 'doctor', file.name}`;
 
         if(!file || !name || !email){
             res.status(400).send({msg: "missing fields"});
         }
 
-        await file.mv(path.join(__dirname, '..', 'doctor', file.name), error => {
+        await file.mv(path.join(filePath), error => {
             if(error){
                 console.log(error);
                 res.status(500).send({msg: "File Upload Error"})
             }
-            const result= createDoctor({img:file.name, name, email});
+            // Encoded image file as Base65 //
+            const newImg= fsExtra.readFileSync(filePath);
+            const encodeBase65= newImg.toString('base64');
+            let imgs= {
+                contentType: file.mimetype,
+                size: file.size,
+                img: Buffer.from(encodeBase65, 'base64')
+            }
+
+            const result= createDoctor({imgs, name, email});
             if(result){
-                res.status(200).send({msg:'Doctor Created'})
+                fsExtra.remove(filePath, error =>{
+                    if(error){
+                        log.error(error);
+                    }
+                    res.status(200).send({msg:'Doctor Created'})
+                });
             }
             else{
                 log.error('Failed to Create Doctor')

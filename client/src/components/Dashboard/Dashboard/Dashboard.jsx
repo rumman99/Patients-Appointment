@@ -3,6 +3,7 @@ import DashboardAppointment from '../DashboardAppointment/DashboardAppointment';
 import DashboardCalendar from '../DashboardCalendar/DashboardCalendar';
 import { useEffect, useState } from 'react';
 import AllAppointments from '../AllAppointments/AllAppointments';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Dashboard = () => {
     const [selectDate, setSelectDate]= useState(new Date())
@@ -33,6 +34,7 @@ const Dashboard = () => {
     return (
         <div>
             <div className='container-fluid row'>
+                <Navbar showLogo={false}/>
                 <div className='col-md-2'>
                     <Sidebar/>
                 </div>

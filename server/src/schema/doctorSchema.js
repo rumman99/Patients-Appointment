@@ -9,8 +9,8 @@ const doctorSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    img: {
-        type: String,
+    imgs: {
+        type: Object,
         required: true
     }
 },
